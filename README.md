@@ -25,7 +25,8 @@ Executa (en una sola línia):
 node combinacions.js | bash
 ```
 
-O bé, genera el shell script, per poder inspeccionar-lo (recomanat):
+O bé, en dues línies: primer genera el shell script, per poder inspeccionar-lo
+(recomanat), i després executa'l:
 
 ```bash
 node combinacions.js > envia.sh
