@@ -1,6 +1,7 @@
 
 # AMIC INVISIBLE
-Generador combinacions amic invisible.
+Generador combinacions amic invisible que té en compte els anys anteriors, per
+no repetir receptors.
 
 ## Què fa?
 Genera un shell script que envia els mails amb les combinacions generades, fent
@@ -11,7 +12,6 @@ servir mutt/neomutt.
 - mutt / neomutt (per enviar els mails)
 
 ## Instruccions
-
 Descarrega:
 
 ```bash
