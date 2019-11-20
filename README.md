@@ -10,13 +10,20 @@ Genera un shell script que envia els mails fent servir mutt/neomutt.
 
 ## Instruccions
 
-En una sola línia:
+Descarrega:
+
+```bash
+git clone https://github.com/holalluis/amic-invisible.git
+cd amic-invisible
+```
+
+Executa (en una sola línia):
 
 ```bash
   node combinacions.js | bash
 ```
 
-O bé, generant el shell script dels mails, per poder inspeccionar-lo:
+O bé, genera el shell script, per poder inspeccionar-lo (recomanat):
 
 ```bash
   node combinacions.js > envia_mails.sh
