@@ -2,7 +2,9 @@
 # AMIC INVISIBLE
 Generador combinacions amic invisible.
 
-Genera un shell script que envia els mails fent servir mutt/neomutt.
+## Què fa?
+Genera un shell script que envia els mails amb les combinacions generades, fent
+servir mutt/neomutt.
 
 ## Requeriments
 - node (per generar les combinacions)
@@ -20,12 +22,12 @@ cd amic-invisible
 Executa (en una sola línia):
 
 ```bash
-  node combinacions.js | bash
+node combinacions.js | bash
 ```
 
 O bé, genera el shell script, per poder inspeccionar-lo (recomanat):
 
 ```bash
-  node combinacions.js > envia_mails.sh
-  bash envia_mails.sh
+node combinacions.js > envia.sh
+bash envia.sh
 ```
