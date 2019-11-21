@@ -1,6 +1,5 @@
-
 # AMIC INVISIBLE
-Generador combinacions amic invisible que té en compte els anys anteriors, per
+Genera combinacions per amic invisible, tenint en compte els anys anteriors, per
 no repetir receptors.
 
 ## Què fa?
@@ -19,14 +18,14 @@ git clone https://github.com/holalluis/amic-invisible.git
 cd amic-invisible
 ```
 
-Executa (en una sola línia):
+Executa (genera combinacions i envia mails), en una sola línia:
 
 ```bash
 node combinacions.js | bash
 ```
 
-O bé, en dues línies: primer genera el shell script, per poder inspeccionar-lo
-(recomanat), i després executa'l:
+O bé, en dues línies: primer genera el shell script amb les combinacions, per
+poder inspeccionar-lo (recomanat), i després executa'l per enviar els mails:
 
 ```bash
 node combinacions.js > envia.sh
