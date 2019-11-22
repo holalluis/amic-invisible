@@ -5,6 +5,7 @@
 */
 
 //llista participants pròxim amic invisible
+//TODO es podria fer amb un objecte --> new Participant(nom, mail, array_amics_anteriors)
 let participants=[
   "aina",
   "alba",
@@ -60,7 +61,6 @@ function barreja(arr){
     arr[i]=arr[j];
     arr[j]=temp;
   }
-
   let nou_array=[];
   arr.forEach(nom=>nou_array.push(nom));
   return nou_array;
@@ -73,39 +73,31 @@ function genera_combinacions(){
   let repeticions  = 0; //nombre de repeticions anys anteriors
   let combinacions = []; //resultat final va aquí dins
 
+  //el sistema falla si coincideixen els últims de les llistes
+  if(amics[amics.length-1] == receptors[receptors.length-1]){
+    return genera_combinacions();
+  }
+
   //bucle infinit fins que hi ha un resultat vàlid
   //(nota: vàlid vol dir que amic no sigui receptor)
   while(true){
-    let amic     = amics[0];
-    let receptor = receptors[0];
+    let amic     = amics.shift();              //amic: agafa el primer de la llista
+    let receptor = receptors.find(r=>r!=amic); //receptor: agafa el primer que trobis que no coincideixi amb l'amic
 
-    if(amic==receptor){
-      if(amics.length==1){
-        //torna a començar: per molt que barregis només hi ha un receptor
-        return genera_combinacions();
-      }else{
-        //si queden receptors, barreja de nou
-        //console.log({receptors}); //veure receptors abans de barrejar
-        receptors=barreja(receptors);
-        //console.log({receptors}); //veure receptors després de barrejar
-        continue;
-      }
-    }
+    if(amic     === undefined) throw "amic undefined: hi ha hagut algun error";
+    if(receptor === undefined) throw "receptor undefined: hi ha hagut algun error";
 
-    //penalitza repeticions anys passats
+    //actualitza llista receptors
+    receptors = receptors.filter(r=>r!=receptor);
+
+    //penalitza repeticions
     if(amics_anteriors[amic].indexOf(receptor)+1){
-      repeticions++;
+      repeticions++; //penalitza amb un punt
+      //TODO pel futur, es podria penalitzar més els més recents
     }
-
-    //guarda la combinació
-    let combinacio = [amic, receptor];
-
-    //elimina de la llista els afectats
-    amics.shift();
-    receptors.shift();
 
     //afegeix la combinació al resultat
-    combinacions.push(combinacio);
+    combinacions.push([amic, receptor]);
 
     //si ja no queden amics, acaba
     if(amics.length==0) break;
@@ -145,6 +137,7 @@ function troba_resultat(){
   }
 
   //final
+  console.log(`# Amic invislbe amb ${participants.length} participants:`);
   console.log(`# Resultat bo (trobat en ${iteracions} iteracions)`);
   console.log(`# Repeticions: ${minim}`);
 
@@ -156,4 +149,5 @@ function troba_resultat(){
   });
 }
 
+//executa programa
 troba_resultat();
