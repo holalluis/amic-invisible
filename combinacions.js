@@ -5,52 +5,56 @@
 */
 
 //llista participants pròxim amic invisible
-//TODO es podria fer amb un objecte --> new Participant(nom, mail, array_amics_anteriors)
+//seria millor amb una classe--> new Participant(nom, mail, array_amics_anteriors) TODO
 let participants=[
+  "núria",
+  "àlex",
+  "rut",
   "aina",
   "alba",
-  "chris",
-  "lluís",
-  "jaume",
-  "màrius",
-  "núria",
-  "paton",
-  "queralt",
+  "laura",
+  "rosa",
   "sandra",
-  "rut",
-  "àlex",
+  //"màrius",
+  "queralt",
+  "lluís",
+  "paton",
 ];
 
 //mails participants
 let mails={
   "aina"     : "ainapr@gmail.com",
   "alba"     : "albatorrents1@gmail.com",
-  "chris"    : "christopher.a.millan@gmail.com",
-  "jaume"    : "jmadaula@gmail.com",
+  "laura"    : "laurasoler24@gmail.com",
   "lluís"    : "holalluis@gmail.com",
   "màrius"   : "mariustomas@gmail.com",
   "núria"    : "ncasas9@gmail.com",
   "paton"    : "jantonz@gmail.com",
   "queralt"  : "queralt.vallmajo@gmail.com",
+  "rosa"     : "riust.pascual@gmail.com",
   "rut"      : "rut.freixas@gmail.com",
   "sandra"   : "ssegurabayona@gmail.com",
   "àlex"     : "alexmasppcc@gmail.com",
+  //"jaume"    : "jmadaula@gmail.com",
+  //"chris"    : "christopher.a.millan@gmail.com",
 };
 
 //amics anys anteriors: penalitza combinacions
 let amics_anteriors={
-  "aina"     : ['rut',      'alba',     'paton'],
-  "alba"     : ['rosa',     'rut',      'laura'],
-  "chris"    : ['xavi'],
-  "jaume"    : [            ],
-  "lluís"    : ['àlex',     'laura',    'queralt'],
-  "màrius"   : ['paton',    'chris',    'àlex'],
-  "núria"    : ['rut',      'àlex',     'lluís'],
-  "paton"    : ['lluís',    'alba'],
-  "queralt"  : ['sandra',   'lluís'],
-  "rut"      : ['alba',     'queralt',  'núria'],
-  "sandra"   : ['queralt',  'lluís',    'núria'],
-  "àlex"     : ['sandra',   'frans',    'màrius',    'lluís'],
+  "aina"   :[],
+  "alba"   :[],
+  "lluís"  :[],
+  "núria"  :[],
+  "paton"  :[],
+  "queralt":[],
+  "rut"    :[],
+  "sandra" :[],
+  "àlex"   :[],
+  "laura"  :[],
+  "rosa"   :[],
+  "màrius" :[],
+  "chris"  :[],
+  "jaume"  :[],
 };
 
 //algoritme yates barrejar array
@@ -145,7 +149,7 @@ function troba_resultat(){
   resultat_bo.combinacions.forEach(([amic,receptor])=>{
     //console.log(`${amic}\t--> ${receptor}`);
     //genera un mail per enviar amb mutt
-    console.log(`echo "hola ${amic}, li fas el regal a --> ${receptor}" | mutt ${mails[amic]} -s "Amic invisible 2019 tites i tetes"`);
+    console.log(`echo "hola ${amic}, li fas el regal a --> ${receptor}" | mutt ${mails[amic]} -s "Amic invisible 2021 tites i tetes"`);
   });
 }
 
