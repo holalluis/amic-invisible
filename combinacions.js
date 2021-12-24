@@ -7,18 +7,18 @@
 //llista participants pròxim amic invisible
 //seria millor amb una classe--> new Participant(nom, mail, array_amics_anteriors) TODO
 let participants=[
-  "núria",
-  "àlex",
-  "rut",
   "aina",
   "alba",
   "laura",
-  "rosa",
-  "sandra",
-  //"màrius",
-  "queralt",
   "lluís",
+  //"màrius",
+  "núria",
   "paton",
+  "queralt",
+  "rosa",
+  "rut",
+  "sandra",
+  "àlex",
 ];
 
 //mails participants
@@ -35,8 +35,8 @@ let mails={
   "rut"      : "rut.freixas@gmail.com",
   "sandra"   : "ssegurabayona@gmail.com",
   "àlex"     : "alexmasppcc@gmail.com",
-  //"jaume"    : "jmadaula@gmail.com",
-  //"chris"    : "christopher.a.millan@gmail.com",
+  "jaume"    : "jmadaula@gmail.com",
+  "chris"    : "christopher.a.millan@gmail.com",
 };
 
 //amics anys anteriors: penalitza combinacions
